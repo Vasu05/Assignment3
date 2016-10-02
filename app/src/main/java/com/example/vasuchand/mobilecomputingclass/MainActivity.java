@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, update.class);
                 //intent.putExtra("loging2","t");
                 startActivity(intent);
-                finish();
+              
             }
         });
 
@@ -217,6 +217,7 @@ public class MainActivity extends AppCompatActivity {
                     Environment
                             .getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),
                     IMAGE_DIRECTORY_NAME);
+            Log.v("name" , String.valueOf(mediaStorageDir));
         }
 
             // Create the storage directory if it does not exist
