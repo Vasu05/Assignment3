@@ -33,7 +33,7 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
 
     private static Context context;
-    private Button start,stop,logout,delete;
+    private Button start,stop,logout,delete,update;
     private ImageView preview,preview2;
     private static final int CAMERA_REQUEST = 1888;
     private static final int CAMERA_REQUEST2 = 2001;
@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         stop  = (Button)findViewById(R.id.b2);
         logout = (Button)findViewById(R.id.a1);
         delete = (Button)findViewById(R.id.a2);
+        update = (Button)findViewById(R.id.a3);
         preview = (ImageView)findViewById(R.id.imgPreview);
         preview2 = (ImageView)findViewById(R.id.imgPreview2);
         email = (TextView)findViewById(R.id.useremail);
@@ -90,6 +91,15 @@ public class MainActivity extends AppCompatActivity {
 
                 cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri2);
                 startActivityForResult(cameraIntent, CAMERA_REQUEST2);
+            }
+        });
+        update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, update.class);
+                //intent.putExtra("loging2","t");
+                startActivity(intent);
+                finish();
             }
         });
 
