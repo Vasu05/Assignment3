@@ -14,10 +14,10 @@
         android:icon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".Login.splashscreen"
-                  android:label="MobileComputing"
-                  android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity
+            android:name=".Login.splashscreen"
+            android:label="MobileComputing"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,22 +26,17 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:label="MobileComputing"
-            android:configChanges="keyboard|keyboardHidden|orientation">
-
-        </activity>
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:label="MobileComputing"></activity>
         <activity
             android:name=".Login.Signup"
             android:label="@string/title_activity_signup"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity
             android:name=".Login.LoginActivity"
             android:label="@string/title_activity_signup"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity android:name=".update"></activity>
     </application>
 
 </manifest>
