@@ -18,9 +18,13 @@ public class database extends SQLiteOpenHelper {
     public static final String CONTACTS_COLUMN_EMAIL = "email";
     public static final String CONTACTS_COLUMN_PHONE = "phone";
     public static final String CONTACTS_COLUMN_Password = "password";
+    Session session = new Session();
+    private Context c;
     public database(Context context)
     {
+
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        this.c = context;
     }
 
     @Override
@@ -62,5 +66,16 @@ public class database extends SQLiteOpenHelper {
         return db.delete("mobliecomputing",
                 "email = ? ",
                 new String[] { email });
+    }
+    public boolean updateContact (String name, String phone, String email)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("name", name);
+        contentValues.put("phone", phone);
+        db.update("mobilecomputing", contentValues, "email = ? ", new String[]{email});
+        session.setMob(c,"mob",phone);
+        session.setName(c,"name",name);
+        return true;
     }
 }
